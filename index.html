@@ -3,7 +3,8 @@
 </html>
 
 <script>
-  var ctx = document.getElementById("canvas").getContext("2d");
+  var canvas = document.getElementById("canvas")
+  var ctx = canvas.getContext("2d");
   var WIDTH = 400;
   var HEIGHT = 500;
 
@@ -33,10 +34,16 @@
   setInterval(update, 40)
 
   function update() {
-      y_player += 50;
-      ctx.drawImage(img_player, x_player, y_player, 60, 40);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    y_player += 10;
+    ctx.drawImage(img_player, x_player, y_player, 60, 40);
 
-      y_enemy1 -= 50;
-      ctx.drawImage(img_enemy1, x_enemy1, enemy1, 60, 40);
+    y_enemy1 -= 10;
+    ctx.drawImage(img_enemy1, x_enemy1, y_enemy1, 60, 40);
+
+    if(y_player <0){
+      y_player = 400;
+      y_enemy1 = 50;
+    }
   }
 </script>
