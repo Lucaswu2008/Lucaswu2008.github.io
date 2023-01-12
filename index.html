@@ -16,7 +16,7 @@
   // }
 
   var x_player = 180;
-  var y_player = 400;
+  var y_player = 250;
   var img_player = new Image();
   img_player.src = "img/player.png";
   img_player.onload = function() {
@@ -24,7 +24,7 @@
   }
 
   var x_enemy1 = 50;
-  var y_enemy1 = 50;
+  var y_enemy1 = 250;
   var img_enemy1 = new Image();
   img_enemy1.src = "img/enemy1.png";
   img_enemy1.onload = function() {
@@ -41,9 +41,9 @@
     y_enemy1 -= 10;
     ctx.drawImage(img_enemy1, x_enemy1, y_enemy1, 60, 40);
 
-    if(y_player <0){
-      y_player = 400;
-      y_enemy1 = 50;
+    if(y_enemy1 <0){
+      y_player = 0;
+      y_enemy1 = 500;
     }
   }
 </script>
